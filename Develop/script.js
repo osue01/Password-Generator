@@ -4,6 +4,7 @@ var passwordText = document.querySelector("#password");
 
 // Write password to the #password input
 function generatePassword(length) {
+  var length = Number(prompt("Enter password length"))
   var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789*&%$#@!"
   var password = "";
   
@@ -17,18 +18,13 @@ function generatePassword(length) {
 
   return password;
 }
+//still working....  
+//how to refresh the page automatically?
 
-var passwordLength = 8;
+// Add event listener to generate button
+generateBtn.addEventListener("click", function(){
+  var passwordLength = 8;
   var newPassword = generatePassword(passwordLength);
   passwordText.value = newPassword;
   console.log(newPassword);
-
-
-//still working....  
-//how to refresh the page automatically?
-//Uncaught TypeError: EventTarget.addEventListener: Argument 2 is not an object.
-
-
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", newPassword);
+});
